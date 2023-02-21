@@ -1,0 +1,15 @@
+def changeler(a=0, b=0):
+    def inner():
+        nonlocal a, b
+        return a, b
+    return inner
+
+a = "Замени меня"
+b = "На это"
+
+print(a, b)
+
+a = changeler(b, a)()
+
+
+print(*a)
